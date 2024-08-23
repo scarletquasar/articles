@@ -7,4 +7,51 @@ Por exemplo, no C#, a nomeação de classes, propriedades públicas e métodos (
 
 Um grande exemplo onde convenções se adaptam melhor se direcionadas às necessidades do negócio, é por exemplo, uma empresa que utiliza diversas tecnologias para montar uma mesma solução - visto a presença de times multidisciplinares, peças da solução que se adaptam melhor a tecnologias específicas ou limitações de negócio que fazem com que certas partes da solução tenham que ser construídas com essas tecnologias. Leve em consideração uma empresa hipotética que utilize **lambdas python**, que depois de diversas análises técnicas por parte de times de engenharia e arquitetura se mostraram a forma mais rápida e efetiva de prototipar e montar peças de solução. A mesma empresa conta com uma vasta gama de desenvolvedores C#, fazendo com que várias soluções (como workers e REST APIs) sejam feitas utilizando a linguagem, e por isso uma solução interessante para se manter no padrão entre comunicações fosse simplesmente alterar o casing das respostas de APIs e outras requisições para **snake_case**, beneficiando assim a utilização de python no ambiente de desenvolvimento.
 
-Quando se fala de padrões de código, também podem ser levados em consideração conjuntos de práticas que são realizadas para montar um programa. O melhor exemplo
+Quando se fala de padrões de código, também podem ser levados em consideração conjuntos de práticas que são realizadas para montar um programa. O melhor exemplo para falar sobre conjuntos de práticas é o JavaScript (ou TypeScript), sendo uma linguagem extremamente flexível onde é possível utilizar diversos paradigmas diferentes em uma mesma aplicação. Por exemplo, algumas empresas utilizam o framework **NestJS** para o desenvolvimento de aplicações web, esse framework é extremamente baseado em programação orientada a objetos - que por sua vez conta com vasta utilização de classes, herança assim como vários design patterns, onde o que mais se destaca é a injeção de dependências.
+
+> Injeção de dependência (Dependency Injection, em inglês) é um padrão de desenvolvimento de programas de computadores utilizado quando é necessário manter baixo o nível de acoplamento entre diferentes módulos de um sistema. Nesta solução as dependências entre os módulos não são definidas programaticamente, mas sim pela configuração de uma infraestrutura de software (container) que é responsável por "injetar" em cada componente suas dependências declaradas. - *Wikipedia*
+
+Geralmente, as soluções montadas em Nest utilizam um pattern de serviços para identificar peças de funcionalidades que podem ser reutilizadas de maneira desacoplada, como no exemplo:
+
+```js
+import { Injectable } from '@nestjs/common';
+import { Cat } from './interfaces/cat.interface';
+
+@Injectable()
+export class CatsService {
+  private readonly cats: Cat[] = [];
+
+  findAll(): Cat[] {
+    return this.cats;
+  }
+}
+```
+
+Já outras empresas utilizam uma arquitetura mais livre, geralmente baseada em módulos e métodos ou até mesmo "features", passando as dependências como argumentos nas funcionalidades que irão precisar fazer seu uso, fazendo assim com que a utilização desses métodos também seja possível em ambientes de testes e outras ocasiões. Um exemplo, diretamente de um projeto pessoal que fiz anteriormente, pode ser:
+
+```ts
+const createPendingMessage = async (
+    input: CreatePendingMessageOptions,
+    token: string,
+    db: Database
+) => {
+    const sentAt = new Date().toISOString();
+    const uuid = randomUUID();
+
+    await checkJwtOwnership(token, input.senderId);
+
+    await db
+        .insert(pendingMessageTable)
+        .values({
+            uuid,
+            sentAt,
+            senderId: input.senderId,
+            receiverId: input.receiverId,
+            content: input.content
+        });
+
+    return uuid;
+}
+```
+
+## Mas afinal, o que utilizar?
