@@ -55,3 +55,5 @@ const createPendingMessage = async (
 ```
 
 ## Mas afinal, o que utilizar?
+
+Do ponto de vista profissional, se adequar ao ambiente de trabalho é uma soft skill essencial para "sobreviver". Obivamente não estou falando de aceitar decisões ruins sem questionamento, mas sim para buscar entender o motivo de certas decisões serem implementadas e de onde elas vieram, só assim é possível acumular experiência para poder confrontar decisões de design futuras. O correto é sempre procurar se adaptar ao design utilizado por sua equipe ou empresa, e se cabível, questionar e implementar gradualmente mudanças dependendo do seu nível de influência. Isso não significa que fora do ambiente de trabalho seja necessário utilizar essas mesmas decisões de design, afinal, uma das características de uma boa pessoa programadora é a adaptabilidade.
