@@ -6,4 +6,15 @@ If you are using .NET for the first time or perhaps setting up a computer from z
 
 ## A quick overview about the extensions
 
-Clearly, we are going to use a lot of extensions to mimic the .NET features that we have in Visual Studio, I personally don't see it as a bad thing, but it can vary from person to person. It is also important to clarify that this article follows my experience and these extensions can not be the exact perfect fit for you, but they were - and are - for me, and for a long time (that's why I am writing this article).
+Clearly, we are going to use a lot of extensions to mimic the .NET features that we have in Visual Studio, I personally don't see it as a bad thing, but it can vary from person to person. It is also important to clarify that this article follows my experience and these extensions can not be the exact perfect fit for you, but they were - and are - for me, and for a long time (that's why I am writing this article). The extensions are:
+
+- **Main ones**
+  - .NET Core Test Explorer
+  - .NET Stalker Debugger
+  - C# Dev Kit
+  - C# Curly Formatter
+  - C# Namespace Completion
+  - Visual NuGet
+- **Optional ones (only appearance)**
+  - Studio Icons
+  - Visual Studio 2019 Theme
