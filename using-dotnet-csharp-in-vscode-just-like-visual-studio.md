@@ -25,3 +25,5 @@ This is the most important extension of our list, it is basically a "extension p
 > C# Dev Kit helps you manage your code with a solution explorer and test your code with integrated unit test discovery and execution, elevating your C# development experience wherever you like to develop (Windows, macOS, Linux, and even in a Codespace).
 
 In most cases, this extension usually offers *everything* you need to use .NET with the most basic features - even including testing and breakpoints, but personally, I ran into a lot of problems when trying to use these features, like everything stopping suddenly or not working at all, without apparent problem that required trial and error closing and reopening the IDE and even uninstalling and reinstalling the extension several times (and that is what made me go look for other extensions to fix the faults).
+
+# 🧩 C# Curly Formatter
