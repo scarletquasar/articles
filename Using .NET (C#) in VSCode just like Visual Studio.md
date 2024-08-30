@@ -9,12 +9,17 @@ If you are using .NET for the first time or perhaps setting up a computer from z
 Clearly, we are going to use a lot of extensions to mimic the .NET features that we have in Visual Studio, I personally don't see it as a bad thing, but it can vary from person to person. It is also important to clarify that this article follows my experience and these extensions can not be the exact perfect fit for you, but they were - and are - for me, and for a long time (that's why I am writing this article). The extensions are:
 
 - **Main ones**
-  - .NET Core Test Explorer
-  - .NET Stalker Debugger
   - C# Dev Kit
   - C# Curly Formatter
   - C# Namespace Completion
+  - .NET Core Test Explorer
+  - .NET Stalker Debugger
   - Visual NuGet
 - **Optional ones (only appearance)**
   - Studio Icons
   - Visual Studio 2019 Theme
+ 
+# 🧩 C# Dev Kit
+
+This is the most important extension of our list, it is basically a "extension package" containing everything you need to basically run C# in your VSCode - most of things depending on the usage of the .NET CLI and very raw. The original extension description says:
+> C# Dev Kit helps you manage your code with a solution explorer and test your code with integrated unit test discovery and execution, elevating your C# development experience wherever you like to develop (Windows, macOS, Linux, and even in a Codespace).
